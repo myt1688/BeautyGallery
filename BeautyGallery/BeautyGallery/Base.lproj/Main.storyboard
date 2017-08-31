@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="cOZ-mK-BAO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BeautyGallery-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vmv-QA-iCQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="BcA-cz-5lB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="choose:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee6-39-9GS">
+                                <rect key="frame" x="16" y="118" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gah-1B-EQx">
+                                <rect key="frame" x="0.0" y="147" width="359" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="K7J-e2-7as"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MBD-nR-SpY"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQs-Zl-USs">
+                                <rect key="frame" x="162" y="393" width="50" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <segue destination="Rbd-gQ-Dnt" kind="push" identifier="goToGallery" id="pWI-Ye-kK4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gah-1B-EQx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="1eT-Ou-tY0"/>
+                            <constraint firstItem="rQs-Zl-USs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="146" id="61C-SL-Ign"/>
+                            <constraint firstItem="gah-1B-EQx" firstAttribute="top" secondItem="vmv-QA-iCQ" secondAttribute="bottom" constant="83" id="KWs-3x-WIx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gah-1B-EQx" secondAttribute="trailing" id="axg-Fd-y2Y"/>
+                            <constraint firstItem="rQs-Zl-USs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvM-QF-pNk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rQs-Zl-USs" secondAttribute="trailing" constant="147" id="ibF-li-tnW"/>
+                            <constraint firstItem="rQs-Zl-USs" firstAttribute="top" secondItem="gah-1B-EQx" secondAttribute="bottom" constant="30" id="l4o-Sv-b6K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BeautyGallery" id="InG-Pv-ec9"/>
+                    <connections>
+                        <outlet property="beautyPicker" destination="gah-1B-EQx" id="f6I-tA-RDJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124.5" y="149.5"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="tL3-2d-tau">
+            <objects>
+                <viewController id="Rbd-gQ-Dnt" customClass="GalleryViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iUp-9u-9bZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7xO-Mh-QKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qd2-s9-Jll">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3F5-CI-vLD">
+                                <rect key="frame" x="16" y="20" width="95" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="return"/>
+                                <connections>
+                                    <segue destination="xav-iX-Loj" kind="unwind" unwindAction="closeWithSegue:" id="Ksn-jF-Dou"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="wangfei" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-OM-ovI">
+                                <rect key="frame" x="38" y="72" width="298" height="480"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l2Q-OM-ovI" firstAttribute="leading" secondItem="Qd2-s9-Jll" secondAttribute="leadingMargin" constant="22" id="BRQ-pP-9sZ"/>
+                            <constraint firstItem="7xO-Mh-QKM" firstAttribute="top" secondItem="l2Q-OM-ovI" secondAttribute="bottom" constant="66" id="Kgb-aF-1Kb"/>
+                            <constraint firstItem="l2Q-OM-ovI" firstAttribute="top" secondItem="iUp-9u-9bZ" secondAttribute="bottom" constant="8" id="bam-4C-R1m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l2Q-OM-ovI" secondAttribute="trailing" constant="23" id="yLn-V9-v2M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="88y-vk-dMU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="dOk-Pk-FY0">
+                            <connections>
+                                <action selector="share:" destination="Rbd-gQ-Dnt" id="bpK-nk-EJa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beautyImage" destination="l2Q-OM-ovI" id="lXR-NS-Rzi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqo-WE-8Ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xav-iX-Loj" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1590.5" y="150.5"/>
+        </scene>
+        <!--China-->
+        <scene sceneID="tb9-55-8xe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uyo-jZ-kMK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="China" image="great_wall" id="eRz-ew-6xj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sxb-Dv-4oB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sqw-Ab-OfB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JlI-uT-ai1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537.5" y="149.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="411-ro-5DQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cOZ-mK-BAO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="YOg-fG-411">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uyo-jZ-kMK" kind="relationship" relationship="viewControllers" id="OnZ-hM-ezi"/>
+                        <segue destination="M6n-ET-Ojb" kind="relationship" relationship="viewControllers" id="hKG-GU-dey"/>
+                        <segue destination="8H2-yb-Rjj" kind="relationship" relationship="viewControllers" id="8yR-eh-C9v"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mv3-V6-rMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="908"/>
+        </scene>
+        <!--Japan-->
+        <scene sceneID="T2i-St-4Gb">
+            <objects>
+                <viewController id="M6n-ET-Ojb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aGf-aK-dt4"/>
+                        <viewControllerLayoutGuide type="bottom" id="lsm-Dm-AND"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MuD-gJ-A5t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="japanese" translatesAutoresizingMaskIntoConstraints="NO" id="U7m-LW-Wxp">
+                                <rect key="frame" x="27" y="20" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U7m-LW-Wxp" firstAttribute="leading" secondItem="MuD-gJ-A5t" secondAttribute="leadingMargin" constant="11" id="H0A-f6-3od"/>
+                            <constraint firstItem="lsm-Dm-AND" firstAttribute="top" secondItem="U7m-LW-Wxp" secondAttribute="bottom" constant="30" id="oMq-Gc-6DY"/>
+                            <constraint firstItem="U7m-LW-Wxp" firstAttribute="centerX" secondItem="MuD-gJ-A5t" secondAttribute="centerX" id="rXD-Yp-7co"/>
+                            <constraint firstItem="U7m-LW-Wxp" firstAttribute="top" secondItem="aGf-aK-dt4" secondAttribute="bottom" id="sbK-bn-QpF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Japan" image="geisha" id="bdD-Zi-toB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8D-Jr-N7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="908"/>
+        </scene>
+        <!--Korean-->
+        <scene sceneID="cHr-Jv-UYQ">
+            <objects>
+                <viewController id="8H2-yb-Rjj" customClass="KoreanViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="srT-mE-zcM"/>
+                        <viewControllerLayoutGuide type="bottom" id="rKA-H5-Wet"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="926-th-t1c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" image="korean" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-MM-dsk">
+                                <rect key="frame" x="40" y="39" width="295" height="492"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD0-Wc-4YR">
+                                <rect key="frame" x="40" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="facebook"/>
+                                <connections>
+                                    <action selector="facebookShare:" destination="8H2-yb-Rjj" eventType="touchUpInside" id="63a-P0-rDo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-eS-HnB">
+                                <rect key="frame" x="162" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="twitter"/>
+                                <connections>
+                                    <action selector="twitterShare:" destination="8H2-yb-Rjj" eventType="touchUpInside" id="zdP-Ec-bTA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfu-CO-hhe">
+                                <rect key="frame" x="283" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="weibo"/>
+                                <connections>
+                                    <action selector="weiboShare:" destination="8H2-yb-Rjj" eventType="touchUpInside" id="x4m-cg-1xd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E2H-MM-dsk" firstAttribute="top" secondItem="srT-mE-zcM" secondAttribute="bottom" constant="19" id="AQs-7B-lUs"/>
+                            <constraint firstItem="LVk-eS-HnB" firstAttribute="centerX" secondItem="926-th-t1c" secondAttribute="centerX" id="Cc0-vE-jap"/>
+                            <constraint firstItem="E2H-MM-dsk" firstAttribute="leading" secondItem="926-th-t1c" secondAttribute="leadingMargin" constant="24" id="De8-iq-TXU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E2H-MM-dsk" secondAttribute="trailing" constant="24" id="FyQ-q7-qC7"/>
+                            <constraint firstItem="zD0-Wc-4YR" firstAttribute="top" secondItem="E2H-MM-dsk" secondAttribute="bottom" constant="18" id="FyW-kY-4uk"/>
+                            <constraint firstItem="LVk-eS-HnB" firstAttribute="top" secondItem="E2H-MM-dsk" secondAttribute="bottom" constant="18" id="GTX-N7-DPo"/>
+                            <constraint firstItem="zD0-Wc-4YR" firstAttribute="leading" secondItem="926-th-t1c" secondAttribute="leadingMargin" constant="24" id="KRR-cZ-gD1"/>
+                            <constraint firstItem="sfu-CO-hhe" firstAttribute="top" secondItem="E2H-MM-dsk" secondAttribute="bottom" constant="18" id="MBO-he-3k8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sfu-CO-hhe" secondAttribute="trailing" constant="26" id="bez-f6-qXK"/>
+                            <constraint firstItem="rKA-H5-Wet" firstAttribute="top" secondItem="E2H-MM-dsk" secondAttribute="bottom" constant="87" id="kLv-qU-FPa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Korean" image="torii" id="3AS-sP-FC0"/>
+                    <connections>
+                        <outlet property="beautyImage" destination="E2H-MM-dsk" id="upC-zS-3Sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfj-bH-ndZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567.5" y="1771.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook" width="50" height="50"/>
+        <image name="geisha" width="25" height="25"/>
+        <image name="great_wall" width="25" height="25"/>
+        <image name="japanese" width="320" height="568"/>
+        <image name="korean" width="320" height="568"/>
+        <image name="torii" width="25" height="25"/>
+        <image name="twitter" width="50" height="50"/>
+        <image name="wangfei" width="320" height="480"/>
+        <image name="weibo" width="50" height="50"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
